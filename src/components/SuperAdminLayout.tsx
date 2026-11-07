@@ -1,15 +1,10 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { getStoredAdmin, logout } from '../lib/auth';
-import MobileTabBar, { type TabItem } from './MobileTabBar';
+import MobileSectionNav from './MobileSectionNav';
 
 const navItems = [
   { to: '/super-admin', label: 'Overview', end: true },
   { to: '/super-admin/orgs', label: 'Organizations', end: false },
-];
-
-const mobileTabs: TabItem[] = [
-  { to: '/super-admin', label: 'Overview', end: true, icon: 'overview' },
-  { to: '/super-admin/orgs', label: 'Orgs', icon: 'orgs' },
 ];
 
 export default function SuperAdminLayout() {
@@ -36,6 +31,7 @@ export default function SuperAdminLayout() {
             </button>
           </div>
         </div>
+        <MobileSectionNav prefix="Platform" items={navItems} />
         <nav className="hidden md:flex md:flex-1 md:flex-col md:space-y-1 md:py-4">
           {navItems.map(({ to, label, end }) => (
             <NavLink
@@ -57,7 +53,6 @@ export default function SuperAdminLayout() {
       <main className="tf-main flex-1 min-w-0 overflow-auto p-4 md:p-8 tf-enter">
         <Outlet />
       </main>
-      <MobileTabBar items={mobileTabs} />
     </div>
   );
 }
