@@ -186,7 +186,7 @@ export default function RoutesPage() {
       {listError && <p className="text-sm text-coral">{listError}</p>}
       {!HAS_MAPS_API_KEY && (
         <p className="text-sm text-amber tf-card px-3 py-2">
-          MAPS_API_KEY is not set in web/.env — the map will not load. You can still add
+          Maps API key is missing — the map will not load. You can still add
           stops with lat/lng; the backend stores a straight-line path if Directions is unavailable.
         </p>
       )}

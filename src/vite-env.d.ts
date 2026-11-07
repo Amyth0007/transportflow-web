@@ -7,9 +7,3 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
-
-declare const process: {
-  env: {
-    MAPS_API_KEY?: string;
-  };
-};

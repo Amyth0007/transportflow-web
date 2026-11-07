@@ -11,6 +11,7 @@ import {
   filterValidStops,
   resolvePath,
 } from '../lib/routeMapTypes';
+import { MAPS_API_KEY } from '../lib/mapsApiKey';
 import { loadGoogleMapsScript } from '../lib/loadGoogleMaps';
 import { getSocket } from '../lib/socket';
 import { googleTruckIcon } from '../lib/vehicleMarker';
@@ -123,7 +124,7 @@ export default function RouteMap({
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
-    const apiKey = process.env.MAPS_API_KEY || '';
+    const apiKey = MAPS_API_KEY;
     if (!apiKey) {
       console.error('[RouteMap] MAPS_API_KEY is missing — map will not load');
     }

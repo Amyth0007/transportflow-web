@@ -1,3 +1,5 @@
+import { MAPS_API_KEY } from './mapsApiKey';
+
 /** Central Maharashtra (Ahmednagar region) — default focus for route editing & empty maps. */
 export const DEFAULT_MAP_CENTER: MapPoint = { lat: 19.6011, lng: 75.7170 };
 
@@ -14,7 +16,7 @@ export const MAP_MAX_ZOOM = 18;
 export const MAP_FIT_MAX_ZOOM = 14;
 export const MAP_EMPTY_ZOOM = 6;
 
-export const HAS_MAPS_API_KEY = Boolean(process.env.MAPS_API_KEY);
+export const HAS_MAPS_API_KEY = Boolean(MAPS_API_KEY);
 
 export const MAP_POLYLINE_COLOR = '#1a365d';
 

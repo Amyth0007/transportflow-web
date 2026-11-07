@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { MAPS_API_KEY } from '../lib/mapsApiKey';
 import { loadGoogleMapsScript } from '../lib/loadGoogleMaps';
 import { isInsideIndia } from '../lib/routeMapTypes';
 
@@ -13,7 +14,7 @@ export default function PlaceSearch({ disabled, onPlace }: PlaceSearchProps) {
   onPlaceRef.current = onPlace;
 
   useEffect(() => {
-    const apiKey = process.env.MAPS_API_KEY || '';
+    const apiKey = MAPS_API_KEY;
     if (!apiKey || disabled || !inputRef.current) return;
 
     let autocomplete: any = null;
