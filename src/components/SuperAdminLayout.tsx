@@ -19,19 +19,19 @@ export default function SuperAdminLayout() {
   return (
     <div className="tf-shell flex h-dvh flex-col overflow-hidden md:flex-row">
       <aside className="tf-sidebar flex shrink-0 flex-col border-b md:h-full md:w-60 md:border-b-0 md:border-r">
-        <div className="flex items-center justify-between gap-3 px-4 py-3 md:block md:px-5 md:py-6 md:border-b md:border-line">
-          <div className="min-w-0">
+        <div className="flex items-center justify-between gap-3 px-3 py-3 md:block md:px-5 md:py-6 md:border-b md:border-line">
+          <div className="hidden min-w-0 md:block">
             <p className="tf-kicker">Platform</p>
             <div className="tf-title text-xl mt-0.5">TransportFlow</div>
             {admin && <p className="text-xs text-mute mt-1 truncate">{admin.email}</p>}
           </div>
+          <MobileSectionNav prefix="Platform" items={navItems} />
           <div className="md:hidden">
             <button type="button" onClick={handleLogout} className="tf-btn tf-btn-ghost">
               Log out
             </button>
           </div>
         </div>
-        <MobileSectionNav prefix="Platform" items={navItems} />
         <nav className="hidden md:flex md:flex-1 md:flex-col md:space-y-1 md:py-4">
           {navItems.map(({ to, label, end }) => (
             <NavLink
